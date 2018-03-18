@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations'
 import { DataService } from '../data.service'
+import {NgxAutoScroll} from 'ngx-auto-scroll';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +26,7 @@ import { DataService } from '../data.service'
   ]
 })
 export class HomeComponent implements OnInit {
-  
+  @ViewChild(NgxAutoScroll) ngxAutoScroll: NgxAutoScroll;
   itemCount: number =0;
   btnText: String = 'Add an item';
   goalText: String = 'My First life goal';

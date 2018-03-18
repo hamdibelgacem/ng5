@@ -9,16 +9,37 @@
 
 <div class="container color-light" [@goals]="goals.length">
   <div class="col">
-    <p class="sm">Use this from below to add a new bucket list goal.what do you want to dowith your life?</p>
+    <p class="sm">Use this from below to add a new bucket list goal.what do you want to do with your life?</p>
 
     <form action="">
-      <input type="text" class="txt" name="item" placeholder="Life goal..." [(ngModel)]="goalText">
-      <input type="submit" [value]="btnText" class="btn" (click)="addItem()">
+      <input 
+        type="text" 
+        class="txt" 
+        name="item" 
+        placeholder="Life goal..." 
+        [(ngModel)]="goalText">
+      <input 
+        type="submit" 
+        [value]="btnText" 
+        class="btn" 
+        (click)="addItem()">
     </form>
   </div>
-  <div class="col">
+  <div 
+    class="col"
+    id="todo-list" 
+    ngx-auto-scroll lock-y-offset="20" 
+    observe-attributes>
+
     <p class="life-container" *ngFor='let goal of goals'>
       {{goal}}
+      <button 
+          style="margin-left: 90%; background-color:red"
+          (click)="removeItem()">
+          Delete
+      </button>
+      
     </p>
+    
   </div>
 </div>

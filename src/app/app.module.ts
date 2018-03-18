@@ -9,7 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DataService } from './data.service';
-
+import {NgxAutoScrollModule} from 'ngx-auto-scroll';
 
 @NgModule({
   declarations: [
@@ -21,10 +21,11 @@ import { DataService } from './data.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxAutoScrollModule,
   ],
   providers: [
-    DataService
+    DataService,
   ],
   bootstrap: [AppComponent]
 })
